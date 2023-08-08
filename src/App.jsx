@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import ListContainer from './components/ListContainer'
 import { Button } from './components/ui/Button'
+import { AddIcon } from './components/ui/Icons'
 import { cn } from './lib/utils'
 
 function App() {
@@ -38,9 +39,9 @@ function App() {
                 id='header'
             >
                 <h1 className='text-2xl'>Do.it</h1>
-                <Button onClick={handleNewListButtonClick}>new list</Button>
+                <Button onClick={handleNewListButtonClick}><AddIcon /></Button>
             </header>
-            <main className='mt-10'>
+            <main className='mt-12'>
                 <ListContainer lists={lists} setLists={setLists} />
             </main>
             {/* footer */}

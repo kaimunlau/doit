@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react'
 
 import ListItem from './ListItem'
-import { ItemButton } from './ui/Button'
+import { Button, ButtonsContainer } from './ui/Button'
+import { AddIcon, DeleteIcon } from './ui/Icons'
 
 const ListTitle = ({ showTitleInput, title, handleTitleClick, handleTitleChange }) => {
     return (
@@ -99,10 +100,10 @@ const List = ({ title, items, setLists, index, handleListDelete }) => {
                     handleTitleClick={handleTitleClick} 
                     handleTitleChange={handleTitleChange} 
                 />
-                <div>
-                    <ItemButton onClick={handleNewButtonClick}>new item</ItemButton>
-                    <ItemButton onClick={handleListDeleteButtonClick}>del list</ItemButton>
-                </div>
+                <ButtonsContainer>
+                    <Button onClick={handleNewButtonClick}><AddIcon /></Button>
+                    <Button onClick={handleListDeleteButtonClick}><DeleteIcon /></Button>
+                </ButtonsContainer>
             </div>
             {list.items.map((item, index) => {
                 return (

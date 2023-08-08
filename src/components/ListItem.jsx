@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 
+import { Button, ButtonsContainer } from './ui/Button'
+import { DeleteIcon, DoneIcone } from './ui/Icons'
 import { cn } from '../lib/utils'
-import { ItemButton } from './ui/Button'
 
 const Description = ({ showItemInput, description, handleListItemClick, handleListItemChange, done }) => {
     return (
@@ -58,10 +59,10 @@ const ListItem = ({ index, item, done, handleItemChange, handleItemDelete }) => 
                 handleListItemChange={handleListItemChange} 
                 done={done}
             />
-            <div>
-                <ItemButton onClick={handleListItemDone}>done</ItemButton>
-                <ItemButton onClick={handleListItemDelete}>del</ItemButton>
-            </div>
+            <ButtonsContainer>
+                <Button onClick={handleListItemDone}><DoneIcone done={done} /></Button>
+                <Button onClick={handleListItemDelete}><DeleteIcon /></Button>
+            </ButtonsContainer>
         </div>
     )
 }
