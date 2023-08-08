@@ -2,10 +2,10 @@
 
 import { cn } from '../../lib/utils'
 
-export const Button = ({ children, onClick, className }) => {
-    return <button className={cn('text-sm hover:scale-105', className)} onClick={onClick}>{children}</button>
+export const ButtonsContainer = ({ children }) => {
+    return <div className='flex items-bottom'>{children}</div>
 }
 
-export const ItemButton = ({ children, onClick }) => {
-    return <Button className='px-1' onClick={onClick}>{children}</Button>
+export const Button = ({ children, onClick, className }) => {
+    return <button className={cn('text-sm hover:scale-105', className)} onClick={onClick}>{children}</button>
 }

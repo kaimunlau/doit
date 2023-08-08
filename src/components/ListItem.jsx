@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 
+import { Button, ButtonsContainer } from './ui/Button'
+import { DeleteIcon, DoneIcone } from './ui/Icons'
 import { cn } from '../lib/utils'
-import { ItemButton } from './ui/Button'
 
-const Description = ({ showItemInput, description, handleListItemClick, handleListItemChange }) => {
+const Description = ({ showItemInput, description, handleListItemClick, handleListItemChange, done }) => {
     return (
         showItemInput ?
         <input 
@@ -14,7 +15,7 @@ const Description = ({ showItemInput, description, handleListItemClick, handleLi
             onBlur={handleListItemClick} 
             onChange={handleListItemChange} 
         /> :
-        <p>{description}</p>
+        <p className={done && 'line-through text-gray-200'}>{description}</p>
     )
 }
 
@@ -46,8 +47,8 @@ const ListItem = ({ index, item, done, handleItemChange, handleItemDelete }) => 
     return (
         <div 
             className={cn(
-                'flex justify-between border rounded-lg my-1 p-1 px-2',
-                done && 'bg-slate-200'
+                'flex justify-between border rounded-lg my-2 p-1 px-2',
+                done ? 'bg-slate-400' : 'bg-slate-200'
             )}
             onClick={handleListItemClick}
         >
@@ -56,11 +57,12 @@ const ListItem = ({ index, item, done, handleItemChange, handleItemDelete }) => 
                 description={item || description} 
                 handleListItemClick={handleListItemClick} 
                 handleListItemChange={handleListItemChange} 
+                done={done}
             />
-            <div>
-                <ItemButton onClick={handleListItemDone}>done</ItemButton>
-                <ItemButton onClick={handleListItemDelete}>del</ItemButton>
-            </div>
+            <ButtonsContainer>
+                <Button onClick={handleListItemDone}><DoneIcone done={done} /></Button>
+                <Button onClick={handleListItemDelete}><DeleteIcon /></Button>
+            </ButtonsContainer>
         </div>
     )
 }
