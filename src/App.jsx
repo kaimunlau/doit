@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import ListContainer from './components/ListContainer'
 import { Button } from './components/ui/Button'
+import { cn } from './lib/utils'
 
 function App() {
     const defaultList = [
@@ -28,14 +29,22 @@ function App() {
     }, [lists])
 
     return (
-        <main className='container h-screen mx-auto p-2'>
-            <div className='border-b flex justify-between'>
+        <div className='container h-screen w-screen mx-auto p-2'>
+            <header 
+                className={cn(
+                    'bg-slate-300 border-b flex justify-between fixed',
+                    'top-0 left-0 right-0 py-2 px-2 md:px-10'
+                )} 
+                id='header'
+            >
                 <h1 className='text-2xl'>Do.it</h1>
                 <Button onClick={handleNewListButtonClick}>new list</Button>
-            </div>
-            <ListContainer lists={lists} setLists={setLists} />
+            </header>
+            <main className='mt-10'>
+                <ListContainer lists={lists} setLists={setLists} />
+            </main>
             {/* footer */}
-        </main>
+        </div>
     )
 }
 

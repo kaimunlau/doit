@@ -91,7 +91,7 @@ const List = ({ title, items, setLists, index, handleListDelete }) => {
     }
 
     return (
-        <div className='p-2 w-9/12'>
+        <div className='p-2 w-full md:w-1/2'>
             <div className='flex justify-between'>
                 <ListTitle 
                     showTitleInput={showTitleInput} 
