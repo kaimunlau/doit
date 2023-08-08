@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 import ListItem from './ListItem'
 import { Button, ButtonsContainer } from './ui/Button'
 import { AddIcon, DeleteIcon } from './ui/Icons'
+import Input from './ui/Input'
 
 const ListTitle = ({ showTitleInput, title, handleTitleClick, handleTitleChange }) => {
     return (
         showTitleInput ? 
-        <input 
-            value={title} 
-            autoFocus 
+        <Input 
+            value={title}
             onBlur={handleTitleClick} 
             onChange={handleTitleChange} 
         /> : 
