@@ -4,18 +4,18 @@ import { useState } from 'react'
 
 import { Button, ButtonsContainer } from './ui/Button'
 import { DeleteIcon, DoneIcone } from './ui/Icons'
+import Input from './ui/Input'
 import { cn } from '../lib/utils'
 
 const Description = ({ showItemInput, description, handleListItemClick, handleListItemChange, done }) => {
     return (
         showItemInput ?
-        <input 
-            value={description} 
-            autoFocus 
+        <Input 
+            value={description}
             onBlur={handleListItemClick} 
-            onChange={handleListItemChange} 
+            onChange={handleListItemChange}
         /> :
-        <p className={done && 'line-through text-gray-200'}>{description}</p>
+        <p className={cn('px-1', done && 'line-through text-gray-200')}>{description}</p>
     )
 }
 
@@ -56,7 +56,7 @@ const ListItem = ({ index, item, done, handleItemChange, handleItemDelete }) => 
                 showItemInput={showItemInput} 
                 description={item || description} 
                 handleListItemClick={handleListItemClick} 
-                handleListItemChange={handleListItemChange} 
+                handleListItemChange={handleListItemChange}
                 done={done}
             />
             <ButtonsContainer>
