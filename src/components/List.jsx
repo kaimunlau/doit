@@ -6,6 +6,8 @@ import ListItem from './ListItem'
 import { Button, ButtonsContainer } from './ui/Button'
 import { AddIcon, DeleteIcon } from './ui/Icons'
 import Input from './ui/Input'
+import { cn } from '../lib/utils'
+import { TRANSITIONS } from '../lib/styles'
 
 const ListTitle = ({ showTitleInput, title, handleTitleClick, handleTitleChange }) => {
     return (
@@ -93,7 +95,7 @@ const List = ({ title, items, setLists, index, handleListDelete }) => {
     }
 
     return (
-        <div className='p-2 w-full md:w-1/2'>
+        <div className={cn('p-2 w-full md:w-1/2 hover:drop-shadow-md', TRANSITIONS)}>
             <div className='flex justify-between'>
                 <ListTitle 
                     showTitleInput={showTitleInput} 

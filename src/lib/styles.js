@@ -1,0 +1,1 @@
+export const TRANSITIONS = 'transition-all duration-300'
