@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import ListContainer from './components/ListContainer'
-import { Button } from './components/ui/Button'
-import { AddIcon } from './components/ui/Icons'
 import Footer from './components/Footer'
-import { cn } from './lib/utils'
+import Header from './components/Header'
 
 function App() {
     const defaultList = [
@@ -32,16 +30,7 @@ function App() {
 
     return (
         <div className='flex flex-col container h-screen w-screen mx-auto p-2'>
-            <header 
-                className={cn(
-                    'bg-slate-300 border-b flex justify-between fixed',
-                    'top-0 left-0 right-0 py-2 px-2 md:px-10'
-                )} 
-                id='header'
-            >
-                <h1 className='text-2xl'>Do.it</h1>
-                <Button onClick={handleNewListButtonClick}><AddIcon /></Button>
-            </header>
+            <Header handleNewListButtonClick={handleNewListButtonClick} />
             <main className='mt-12 flex-grow'>
                 <ListContainer lists={lists} setLists={setLists} />
             </main>
