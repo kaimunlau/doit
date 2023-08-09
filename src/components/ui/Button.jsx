@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import { TRANSITIONS } from '../../lib/styles'
 import { cn } from '../../lib/utils'
 
 export const ButtonsContainer = ({ children }) => {
@@ -7,5 +8,5 @@ export const ButtonsContainer = ({ children }) => {
 }
 
 export const Button = ({ children, onClick, className }) => {
-    return <button className={cn('text-sm hover:scale-105', className)} onClick={onClick}>{children}</button>
+    return <button className={cn('text-sm mx-0.5 hover:scale-110', TRANSITIONS, className)} onClick={onClick}>{children}</button>
 }
