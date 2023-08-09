@@ -17,7 +17,7 @@ const FooterButton = ({ children, text, url }) => {
     )
 }
 
-const Footer = ({ }) => {
+const Footer = () => {
     return (
         <footer className='flex w-1/3 place-self-center justify-between my-1'>
             <FooterButton 
