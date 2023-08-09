@@ -14,9 +14,10 @@ const ListTitle = ({ showTitleInput, title, handleTitleClick, handleTitleChange 
             value={title}
             onBlur={handleTitleClick} 
             onChange={handleTitleChange} 
+            className='my-1 text-lg'
         /> : 
         <h3 
-            className='my-1 text-lg border-b w-max' 
+            className='my-1 text-lg border-b w-max px-1' 
             onClick={handleTitleClick}
         >
             {title}

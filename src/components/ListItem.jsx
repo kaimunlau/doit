@@ -15,7 +15,7 @@ const Description = ({ showItemInput, description, handleListItemClick, handleLi
             onBlur={handleListItemClick} 
             onChange={handleListItemChange}
         /> :
-        <p className={done && 'line-through text-gray-200'}>{description}</p>
+        <p className={cn('px-1', done && 'line-through text-gray-200')}>{description}</p>
     )
 }
 

@@ -1,4 +1,6 @@
-const Input = ({ value, onBlur, onChange }) => {
+import { cn } from "../../lib/utils"
+
+const Input = ({ value, onBlur, onChange, className }) => {
     const handleEnterKeyDown = (e) => {
         e.keyCode === 13 && e.target.blur()
     }
@@ -15,6 +17,7 @@ const Input = ({ value, onBlur, onChange }) => {
             onBlur={onBlur} 
             onChange={onChange} 
             onKeyDown={handleEnterKeyDown}
+            className={cn('border-b outline-0 rounded-xl px-1', className)}
         />
     )
 }
