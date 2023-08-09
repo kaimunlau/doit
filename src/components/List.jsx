@@ -104,8 +104,12 @@ const List = ({ title, items, setLists, index, handleListDelete }) => {
                     handleTitleChange={handleTitleChange} 
                 />
                 <ButtonsContainer>
-                    <Button onClick={handleNewButtonClick}><AddIcon /></Button>
-                    <Button onClick={handleListDeleteButtonClick}><DeleteIcon /></Button>
+                    <Button onClick={handleNewButtonClick}>
+                        <AddIcon />
+                    </Button>
+                    <Button onClick={handleListDeleteButtonClick}>
+                        <DeleteIcon />
+                    </Button>
                 </ButtonsContainer>
             </div>
             {list.items.map((item, index) => {

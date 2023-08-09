@@ -12,7 +12,9 @@ const Header = ({ handleNewListButtonClick }) => {
             id='header'
         >
             <h1 className='text-2xl'>Do.it</h1>
-            <Button onClick={handleNewListButtonClick}><AddIcon /></Button>
+            <Button onClick={handleNewListButtonClick}>
+                <AddIcon />
+            </Button>
         </header>
     )
 }
