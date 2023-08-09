@@ -14,7 +14,16 @@ const ListContainer = ({ lists, setLists }) => {
     return (
         <div className='container md:w-2/3 md:flex md:mx-auto md:place-content-center md:flex-wrap' id='list-container'>
             {lists.map((list, index) => {
-                return <List key={index} index={index} title={list.title} items={list.items} setLists={setLists} handleListDelete={handleListDelete} />
+                return (
+                    <List 
+                        key={index} 
+                        index={index} 
+                        title={list.title} 
+                        items={list.items} 
+                        setLists={setLists} 
+                        handleListDelete={handleListDelete} 
+                    />
+                )
             })}
         </div>
     )

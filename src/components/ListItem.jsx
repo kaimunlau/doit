@@ -77,8 +77,12 @@ const ListItem = ({ index, item, done, handleItemChange, handleItemDelete }) => 
                 isHovered={isHovered}
             />
             <ButtonsContainer>
-                <Button onClick={handleListItemDone}><DoneIcon done={done} /></Button>
-                <Button onClick={handleListItemDelete}><DeleteIcon /></Button>
+                <Button onClick={handleListItemDone}>
+                    <DoneIcon done={done} />
+                </Button>
+                <Button onClick={handleListItemDelete}>
+                    <DeleteIcon />
+                </Button>
             </ButtonsContainer>
         </div>
     )
