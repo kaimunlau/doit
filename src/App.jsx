@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import ListContainer from './components/ListContainer'
 import { Button } from './components/ui/Button'
 import { AddIcon } from './components/ui/Icons'
+import Footer from './components/Footer'
 import { cn } from './lib/utils'
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
     }, [lists])
 
     return (
-        <div className='container h-screen w-screen mx-auto p-2'>
+        <div className='flex flex-col container h-screen w-screen mx-auto p-2'>
             <header 
                 className={cn(
                     'bg-slate-300 border-b flex justify-between fixed',
@@ -41,10 +42,10 @@ function App() {
                 <h1 className='text-2xl'>Do.it</h1>
                 <Button onClick={handleNewListButtonClick}><AddIcon /></Button>
             </header>
-            <main className='mt-12'>
+            <main className='mt-12 flex-grow'>
                 <ListContainer lists={lists} setLists={setLists} />
             </main>
-            {/* footer */}
+            <Footer />
         </div>
     )
 }
